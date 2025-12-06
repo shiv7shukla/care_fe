@@ -195,7 +195,7 @@ export function ResourceCategoryList({
   );
   // Form state
   const [isCategoryFormOpen, setIsCategoryFormOpen] = React.useState(false);
-  const [formKey, setFormKey] = React.useState(0);
+  const [formkey, setFormkey] = React.useState(0);
   const [editingCategory, setEditingCategory] = React.useState<string | null>(
     null,
   );
@@ -242,13 +242,13 @@ export function ResourceCategoryList({
 
   const handleCreateCategory = () => {
     setEditingCategory(null);
-    setFormKey((prev) => prev + 1);
+    setFormkey((prev) => prev + 1);
     setIsCategoryFormOpen(true);
   };
 
   const handleEditCategory = (category: ResourceCategoryRead) => {
     setEditingCategory(category.slug);
-    setFormKey((prev) => prev + 1);
+    setFormkey((prev) => prev + 1);
     setIsCategoryFormOpen(true);
   };
 
@@ -359,7 +359,7 @@ export function ResourceCategoryList({
 
       {/* Category Form Sheet */}
       <ResourceCategoryForm
-        key={formKey}
+        key={formkey}
         facilityId={facilityId}
         categorySlug={editingCategory || undefined}
         parentCategorySlug={categorySlug || undefined}
