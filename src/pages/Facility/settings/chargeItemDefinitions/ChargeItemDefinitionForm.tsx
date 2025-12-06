@@ -33,11 +33,11 @@ export function ChargeItemDefinitionDrawer({
   onSuccess,
 }: ChargeItemDefinitionDrawerProps) {
   const { t } = useTranslation();
-  const [formKey, setFormKey] = useState(0);
+  const [formkey, setFormkey] = useState(0);
 
   useEffect(() => {
     if (open) {
-      setFormKey((prev) => prev + 1);
+      setFormkey((prev) => prev + 1);
     }
   }, [open]);
 
@@ -81,7 +81,7 @@ export function ChargeItemDefinitionDrawer({
           <div className="max-w-4xl mx-auto w-full px-4 py-4">
             <div className="bg-gray-100 rounded-lg p-4">
               <ChargeItemDefinitionForm
-                key={formKey}
+                key={formkey}
                 facilityId={facilityId}
                 categorySlug={initialData ? undefined : categorySlug}
                 initialData={initialData}
